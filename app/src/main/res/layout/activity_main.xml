@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_background"
+    tools:context=".MainActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8D000000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewSoRao"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            tools:text = "71"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonReset"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn"
+                android:text="Lai"
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonRao"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn"
+                android:text="Rao"
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:layout_marginTop="10dp"
+            android:text="Cac so da ra:"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="6.5"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/textViewHienThiSoDaRao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                tools:text="1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 " />
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</FrameLayout>
