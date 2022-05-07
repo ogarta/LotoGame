@@ -1,7 +1,6 @@
 package com.example.lotogame;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,19 +8,19 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     ScrollView scrollView;
-    TextView txtNumRao, txtNumRao_pre;
-    Button btnReset, btnRao;
-    ArrayList<Integer> num = new ArrayList<Integer>();
+    TextView txtNumRao, txtNumRaoPre;
+    Button btnReset, btnPlay;
+    ArrayList<Integer> arrayListSoRao = new ArrayList<Integer>();
     Random random = new Random();
     String arraylistNum = "";
-    int number;
+    int index;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,43 +28,50 @@ public class MainActivity extends AppCompatActivity {
 
         scrollView = findViewById(R.id.scrollView);
         txtNumRao = findViewById(R.id.textViewSoRao);
-        txtNumRao_pre = findViewById(R.id.textViewHienThiSoDaRao);
-        btnRao = findViewById(R.id.buttonRao);
+        txtNumRaoPre = findViewById(R.id.textViewHienThiSoDaRao);
+        btnPlay = findViewById(R.id.buttonRao);
         btnReset = findViewById(R.id.buttonReset);
 
-        create_ArrayListNum();
+        // tao mang so
+        createArrayListNum();
 
-        btnRao.setOnClickListener(new View.OnClickListener() {
+        btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(num.size() == 0){
+                if(arrayListSoRao.size() == 0){
                     Toast.makeText(MainActivity.this,"Da het so",Toast.LENGTH_LONG).show();
                     return;
                 }
-                number = random.nextInt(num.size()+1);
-                txtNumRao.setText(num.get(number).toString());
-
-                arraylistNum += num.get(number).toString() +" - ";
-                txtNumRao_pre.setText(arraylistNum);
-                num.remove(number);
+                index = random.nextInt(arrayListSoRao.size()+1);
+                txtNumRao.setText(arrayListSoRao.get(index).toString());
+                arraylistNum += arrayListSoRao.get(index).toString() +" - ";
+                txtNumRaoPre.setText(arraylistNum);
+                arrayListSoRao.remove(index);
+                // cuon scroll xuong vi tri cuoi
                 scrollView.fullScroll(View.FOCUS_DOWN);
             }
+
         });
+
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                create_ArrayListNum();
+                createArrayListNum();
                 txtNumRao.setText("");
                 arraylistNum = "";
-                txtNumRao_pre.setText(arraylistNum);
+                txtNumRaoPre.setText(arraylistNum);
             }
+
         });
 
     }
-    public void create_ArrayListNum(){
-        num.clear();
-        for (int i = 1; i <= 100; i++) {
-            num.add(i);
+    private void createArrayListNum(){
+        if(arrayListSoRao.size() != 0){
+            arrayListSoRao.clear();
         }
+        for (int i = 1; i <= 100; i++) {
+            arrayListSoRao.add(i);
+        }
+
     }
 }
