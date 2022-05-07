@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnReset, btnRao;
     ArrayList<Integer> num = new ArrayList<Integer>();
     Random random = new Random();
-    String arrayNum = "";
+    String arraylistNum = "";
     int number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 number = random.nextInt(num.size());
                 txtNumRao.setText(num.get(number).toString());
 
-                arrayNum += num.get(number).toString() +" - ";
-                txtNumRao_pre.setText(arrayNum);
+                arraylistNum += num.get(number).toString() +" - ";
+                txtNumRao_pre.setText(arraylistNum);
                 num.remove(number);
                 scrollView.fullScroll(View.FOCUS_DOWN);
             }
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 create_ArrayListNum();
                 txtNumRao.setText("");
-                arrayNum = "";
-                txtNumRao_pre.setText(arrayNum);
+                arraylistNum = "";
+                txtNumRao_pre.setText(arraylistNum);
             }
         });
 
