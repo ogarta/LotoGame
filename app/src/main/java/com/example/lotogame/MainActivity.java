@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"Da het so",Toast.LENGTH_LONG).show();
                     return;
                 }
-                number = random.nextInt(num.size());
+                number = random.nextInt(num.size()+1);
                 txtNumRao.setText(num.get(number).toString());
 
                 arraylistNum += num.get(number).toString() +" - ";
